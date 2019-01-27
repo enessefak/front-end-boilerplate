@@ -1,0 +1,158 @@
+// COLROS
+$primary: #4072ee;
+$primary-light: #679cf6;
+$primary-dark: darken($primary, 10%);
+$secondary: #29cb97;
+$ocean-gray: #545f69;
+
+$success: #29cb97;
+$success-dark: darken($success, 10%);
+$success-light: lighten($success, 10%);
+
+$danger: #cb2929;
+$danger-dark: darken($danger, 10%);
+$danger-light: lighten($danger, 10%);
+
+$info: #083bbc;
+
+$dark: #16191c;
+$dark-light: #1f2327;
+$dark-lighten: #292e33;
+
+$light: #ffffff;
+$light-dark: #f5f6fa;
+$light-darken: #292e33;
+
+$white: #ffffff;
+$lighten: #fcfcfc;
+
+$gray: #94999c;
+$gray-light: #e3e3e7;
+$gray-lighten: #ebebee;
+
+$bg-color: #f1f7f8;
+$border-color: rgba(255, 255, 255, 0.1);
+$owner: #5889fa;
+$maintainer: #42b076;
+
+// Themes
+
+$dark-theme: (
+  "bg": $dark-light,
+  "bg-navbar": $dark,
+  "bg-component": $dark-lighten,
+  "color": #748aa1,
+  "color-title": #fff,
+  "shadow": "rgba(0, 0, 0, 0.2)",
+);
+
+$light-theme: (
+  "bg": $light-dark,
+  "bg-navbar": $light,
+  "bg-component": $light,
+  "color": #748aa1,
+  "color-title": #31394d,
+  "shadow": #e5e9f2,
+);
+
+$size: (
+  "aside": 80px,
+  "sidebar": 230px,
+  "header": 100px,
+  "padding": 30px,
+);
+
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "ocean-gray": $ocean-gray,
+  "success": $success,
+  "success-dark": $success-dark,
+  "success-light": $success-light,
+  "danger": $danger,
+  "info": $info,
+  "dark": $dark,
+  "white": $white,
+  "lighten": $lighten,
+  "gray": $gray,
+  "gray-light": $gray-light,
+  "gray-lighten": $gray-lighten,
+  "owner": $owner,
+  "maintainer": $maintainer,
+);
+
+$breakpoints: (
+  "xs": 480px,
+  "sm": 768px,
+  "md": 992px,
+  "lg": 1170px,
+  "xl": 1200px,
+);
+
+// BORDER
+$border-radius: 5px;
+
+// BOX SHADOW
+$box-shadow: 0 5px 10px 0 rgba(#000000, 0.25);
+
+// TYPOGRAPY
+$font-family: "Roboto", sans-serif;
+
+$font-weight: (
+  "black": 900,
+  "bold": 700,
+  "medium": 500,
+  "regular": 400,
+  "light": 300,
+);
+
+$fontSize: (
+  "normal": 16px,
+  "base": 16px,
+  "form": 0.875rem,
+  "lg": 2.286rem,
+  "md": 1.429rem,
+  "xs": 0.8rem,
+);
+
+$line-height: 1.5;
+$font-size-base: 62.5%;
+$font-size-sm: 1.4rem;
+$font-size-xs: 1.2rem;
+$font-size: 1.6rem;
+$font-size-lg: 1.8rem;
+$font-size-xl: 2.4rem;
+
+/*
+** Flexible Grid System Vendors https://dnomak.com/flexiblegs/install/scss-plus/
+*/
+$flexiblegs-method: ("css", "bem");
+$flexiblegs-breakpoint: (
+  "xl": "",
+  "lg": "(max-width: 1024px)",
+  "md": "(max-width: 768px)",
+  "sm": "(max-width: 667px)",
+);
+$wrap-col: ("auto", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+$wrap-prop: (
+  "table",
+  "flexbox",
+  "normal",
+  "left",
+  "center",
+  "right",
+  "top",
+  "middle",
+  "bottom",
+  "stretch",
+  "between",
+  "around",
+  "baseline",
+  "reverse",
+  "not-reverse"
+);
+$col-row: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+$col-width: ();
+$col-prop: ("hidden", "not-hidden", "first", "not-first", "last", "not-last");
+$wrap-gutter: (0, 8, 16, 24, 40);
+$wrap-outside: (0, 8, 16, 24, 40);

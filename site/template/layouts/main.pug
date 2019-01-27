@@ -1,0 +1,21 @@
+include ../mixins/index
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    block styles
+      link(rel="stylesheet", href="assets/css/main.css")
+    title Site title
+  body
+    div(style="position: absolute; width: 0; height: 0; z-index: -10")
+      include ../../assets/svg/symbol/symbol.svg
+    include ./header
+    main
+      block content
+    include ./footer
+    block scripts
+      script(src="vendors-bundle.js")
+      script(src="runtimechunk~main-bundle.js")
+      script(src="main-bundle.js")

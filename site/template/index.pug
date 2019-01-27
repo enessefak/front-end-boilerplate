@@ -1,0 +1,12 @@
+extends ./layouts/main.pug
+
+block content
+  h1 Lets go
+
+  a(href="assets/svg/symbol/sprite.symbol.html",
+    target="_blank").flex.flex--center
+
+    +icon("arrow-right")
+    +icon("arrow-right", size=20)
+    +icon("arrow-right", size=30)
+    | All icons

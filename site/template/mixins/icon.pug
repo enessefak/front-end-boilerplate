@@ -1,0 +1,5 @@
+mixin icon(name, size)
+  svg(class=`icon${!size ? ' icon--'+name+'-dims': ''}`
+    width=size
+    height=size)
+    use(xlink:href=`#${name}`)

@@ -1,0 +1,18 @@
+# misc
+.tmp
+tmp
+.DS_Store
+.sass-cache
+.history
+yarn.lock
+package-lock.json
+bitbucket-pipelines.yml
+tasarim
+design
+
+# dependencies
+node_modules
+bower_components
+
+# production
+dist
