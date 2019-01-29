@@ -22,6 +22,7 @@ export function server() {
     const bundler = webpack(webpackConfig);
 
     config = {
+      devtool: "#source-map",
       server: [paths.site, paths.dest],
       open: false,
       middleware: [

@@ -1,6 +1,7 @@
 import { bundleFiles, isProduction, paths } from "./config";
 import path from "path";
 import webpack from "webpack";
+import { VueLoaderPlugin } from "vue-loader";
 
 export let config = {
   context: paths.project,
@@ -10,11 +11,42 @@ export let config = {
     filename: "[name]-bundle.js",
     path: path.join(paths.project, paths.jsDest),
   },
-
   mode: isProduction ? "production" : "development",
-
-  plugins: [new webpack.HotModuleReplacementPlugin()],
-
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: "vue-loader",
+      },
+      {
+        test: /\.pug$/,
+        oneOf: [
+          {
+            resourceQuery: /^\?vue/,
+            use: ["pug-plain-loader"],
+          },
+          {
+            use: ["raw-loader", "pug-plain-loader"],
+          },
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: ["vue-style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.css$/,
+        use: ["vue-style-loader", "css-loader"],
+      },
+    ],
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin(), new VueLoaderPlugin()],
+  resolve: {
+    alias: {
+      vue$: "vue/dist/vue.esm.js",
+    },
+    extensions: ["*", ".js", ".vue", ".json"],
+  },
   optimization: {
     runtimeChunk: {
       name: entrypoint => `runtimechunk~${entrypoint.name}`,
@@ -30,6 +62,7 @@ export let config = {
       },
     },
   },
+  devtool: "#eval-source-map",
 };
 
 export function scripts() {
