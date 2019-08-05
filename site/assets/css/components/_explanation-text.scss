@@ -1,0 +1,67 @@
+.explanation-text {
+  display: flex;
+
+  @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  &__desc {
+    font-family: Ubuntu;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &__desc2 {
+    margin-top: 100px;
+    font-family: Ubuntu;
+    font-size: 16px;
+  }
+
+  &__icon4 {
+    padding-bottom: 150px;
+    margin-left: 400px;
+  }
+
+  &__icon5 {
+    margin-left: 475px;
+  }
+
+  &__desc1 {
+    font-family: Ubuntu;
+    font-size: 16px;
+  }
+
+  &__icon {
+    padding: 15px;
+  }
+
+  &__text {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &:before {
+        left: 0;
+        bottom: 100%;
+        background-image: url('../img/icons/icon4.png');
+    }
+
+    &:after {
+        right: 0;
+        top: 100%;
+        background-image: url('../img/icons/icon5.png');
+    }
+  }
+}

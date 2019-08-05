@@ -1,4 +1,6 @@
 import jQuery from 'jquery'
 import 'slick-carousel'
 
-export { jQuery }
+const $ = jQuery;
+
+export { jQuery, $ }
