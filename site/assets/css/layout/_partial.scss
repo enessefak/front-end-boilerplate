@@ -1,51 +1,13 @@
-*,
-h1,
-h2,
-h3,
-img {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Ubuntu', sans-serif;
-}
-
 .container {
-  max-width: 1170px;
-  margin: 0 auto;
-
-  @media only screen and (max-width: 768px) {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+  margin-left: auto;
+  margin-right: auto;
 }
 
-
-#promo {
-  // background-image: url('https://s.electerious.com/parallaxscene/p1.png');
-  background-image: url("../img/icons/wave.png");
-
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: 100%;
-  background-attachment: scroll;
-  background-color: #648cff;
-}
-
-.block {
+.flex {
   display: flex;
-  justify-content: space-between;
 
-  @media only screen and (max-width: 468px) {
-    flex-direction: column;
+  &--center {
+    align-items: center;
+    justify-items: center;
   }
-}
-
-#last {
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: 100%;
-  background-attachment: scroll;
-  background-color: #648cff;
 }
