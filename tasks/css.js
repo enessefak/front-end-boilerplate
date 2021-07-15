@@ -1,7 +1,7 @@
 import { bundleFiles, isProduction, paths } from "./config";
 import path from "path";
 import gulp from "gulp";
-import sass from "gulp-sass";
+import gulpSass from "gulp-sass";
 import sourcemaps from "gulp-sourcemaps";
 import { stream as critical } from "critical";
 import rename from "gulp-rename";
@@ -9,21 +9,21 @@ import rename from "gulp-rename";
 export function css() {
   const scssSrc = bundleFiles.css;
 
-  const scssOption = {
+  const sassOptions = {
     includePaths: [path.join(paths.project, "node_modules")],
   };
 
-  sass.compiler = require("node-sass");
+  const sass = gulpSass(require("sass"))
   if (isProduction) {
     return gulp
       .src(scssSrc)
-      .pipe(sass(Object.assign(scssOption, { outputStyle: "compressed" })))
+      .pipe(sass({...sassOptions, outputStyle: "compressed" }))
       .pipe(gulp.dest(paths.cssDest));
   }
   return gulp
     .src(scssSrc)
     .pipe(sourcemaps.init())
-    .pipe(sass(scssOption))
+    .pipe(sass({...sassOptions}))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(paths.cssDest));
 }
